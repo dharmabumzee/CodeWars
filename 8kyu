@@ -1,3 +1,4 @@
+// EXAMPLE_1 //
 // Student's final grade //
 // firstSolution //
 
@@ -28,4 +29,35 @@ const finalGrade = (exam, projects) => {
   describe("Sample tests", function(){
     Test.assertEquals(finalGrade(100, 12), 100);
     Test.assertEquals(finalGrade(85, 5), 90);
+  });
+
+// EXAMPLE_2 //
+// Count the monkeys! //
+// firstSolution //
+
+function monkeyCount(n) {
+  var count = [];
+  var i = 1;
+  while (i <= n) {
+    count.push(i);
+    i++;
+  } 
+  return count;
+}
+
+// secondSolution //
+
+function monkeyCount(n) {
+  for (var i = 0, monkeys = []; i < n; monkeys.push(++i));
+  return monkeys;
+}
+
+  // Sample tests //
+
+  Test.describe("monkeyCount", _ => {
+    Test.assertSimilar((monkeyCount(5)), [1, 2, 3, 4, 5]);
+    Test.assertSimilar((monkeyCount(3)), [1, 2, 3]);
+    Test.assertSimilar((monkeyCount(9)), [1, 2, 3, 4, 5, 6, 7, 8, 9]);
+    Test.assertSimilar((monkeyCount(10)), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+    Test.assertSimilar((monkeyCount(20)), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]);
   });
