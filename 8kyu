@@ -89,3 +89,16 @@ function countBy(x, n) {
 
   Test.assertSimilar(countBy(1,5), [1,2,3,4,5], "Array does not match")
   Test.assertSimilar(countBy(2,5), [2,4,6,8,10], "Array does not match")
+
+
+// EXAMPLE_4 //
+// Count odd numbers below n //
+
+function oddCount(n){
+  return Math.floor(n / 2);
+}
+
+  // Sample tests //
+
+  Test.assertEquals(oddCount(15), 7, "Oops! Wrong.");
+  Test.assertEquals(oddCount(15023), 7511, "Oops! Wrong.");
