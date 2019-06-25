@@ -12,9 +12,9 @@ function finalGrade (exam, projects) {
     }
 }
 
-// Sample tests //
+  // Sample tests //
 
-describe("Sample tests", function(){
-  Test.assertEquals(finalGrade(100, 12), 100);
-  Test.assertEquals(finalGrade(85, 5), 90);
-});
+  describe("Sample tests", function(){
+    Test.assertEquals(finalGrade(100, 12), 100);
+    Test.assertEquals(finalGrade(85, 5), 90);
+  });
