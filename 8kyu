@@ -102,3 +102,26 @@ function oddCount(n){
 
   Test.assertEquals(oddCount(15), 7, "Oops! Wrong.");
   Test.assertEquals(oddCount(15023), 7511, "Oops! Wrong.");
+
+// EXAMPLE_5 // 
+// Convert a boolean to a string //
+// firstSolution //
+
+function booleanToString(b){
+  if (b === true) {
+    return "true";
+  } else {
+  return "false";
+  }
+}
+
+// secondSolution //
+
+function booleanToString(b){
+  return b.toString();
+}
+
+  // Sample tests //
+
+  Test.assertEquals(booleanToString(true), "true", 'When we pass in true, we want the string "true" as output');
+  Test.assertEquals(booleanToString(false), "false", 'When we pass in false, we want the string "false" as output');
