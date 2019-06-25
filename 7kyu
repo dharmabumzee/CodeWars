@@ -1,0 +1,24 @@
+// Example_1 //
+// Is this a triangle? //
+// firstSolution //
+
+function isTriangle(a,b,c) {
+    if ((a + b > c) && (a + c > b) && (b + c > a)) {
+      return true;
+    } else {
+     return false;
+  }
+}
+
+// secondSolution //
+
+function isTriangle(a,b,c) {
+   return a + b > c && a + c > b && b + c > a;
+}
+
+ // Sample test
+
+Test.describe("PublicTest", function() {
+    Test.assertEquals(isTriangle(1,2,2), true);
+    Test.assertEquals(isTriangle(7,2,2), false);
+});
