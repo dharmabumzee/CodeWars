@@ -61,3 +61,31 @@ function monkeyCount(n) {
     Test.assertSimilar((monkeyCount(10)), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
     Test.assertSimilar((monkeyCount(20)), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]);
   });
+  
+
+// EXAMPLE_3 //
+// Count by X //
+// firstSolution //
+
+function countBy(x, n) {
+  var z = []; 
+  var step = x;
+  for (var i = 0; i < n; i++) {
+    z.push(x);
+    x += step;
+  }
+  return z;
+}
+
+// secondSolution //
+
+function countBy(x, n) {
+  var z = [];
+  while (z.length < n) z.push(x * (z.length + 1));
+  return z;
+}
+
+  // Sample tests //
+
+  Test.assertSimilar(countBy(1,5), [1,2,3,4,5], "Array does not match")
+  Test.assertSimilar(countBy(2,5), [2,4,6,8,10], "Array does not match")
