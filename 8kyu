@@ -155,3 +155,24 @@ function positiveSum(arr) {
   Test.assertEquals(positiveSum([]),0);
   Test.assertEquals(positiveSum([-1,-2,-3,-4,-5]),0);
   Test.assertEquals(positiveSum([-1,2,3,4,-5]),9);
+  
+// EXAMPLE_7 //
+// Will there be enough space? // 
+// firstSolution //
+
+function enough(cap, on, wait) {
+  var sum = cap - (on + wait);
+  if (sum > 0) {
+    return 0;
+  } else {
+  return Math.abs(sum);
+  }
+}
+
+  // Sample tests // 
+
+  describe('Example Tests', function(){
+    Test.assertEquals(enough(10, 5, 5), 0);
+    Test.assertEquals(enough(100, 60, 50), 10);
+    Test.assertEquals(enough(20, 5, 5), 0);
+  });
