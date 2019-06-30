@@ -182,3 +182,24 @@ function enough(cap, on, wait) {
     Test.assertEquals(enough(100, 60, 50), 10);
     Test.assertEquals(enough(20, 5, 5), 0);
   });
+
+// EXAMPLE_8 //
+// Surface area and volume of a box //
+// firstSolution //
+
+function getSize(width, height, depth) {
+  var surface = 2 * (height * width) + 2 * (height * depth) + 2 * (width * depth);
+  var volume = height * width * depth;
+  return [surface, volume];
+}
+
+// secondSolution //
+
+const getSize = (w, h, d) => [2*(w * h + w * d + h*d), w*h*d];
+
+  // Sample tests //
+
+  Test.assertEquals(getSize(4, 2, 6)[1], 48);
+  Test.assertSimilar(getSize(10, 10, 10), [600, 1000]);
+  Test.assertEquals(getSize(4, 2, 6)[0], 88);
+  Test.assertEquals(getSize(4, 2, 6)[1], 48);
