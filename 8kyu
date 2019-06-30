@@ -255,3 +255,85 @@ const getChar = c => String.fromCharCode(c);
   Test.assertEquals(getChar(63),'?')
   Test.assertEquals(getChar(64),'@')
   Test.assertEquals(getChar(65),'A')
+
+// EXAMPLE_11 //
+// Correct the mistakes of the character recognition software //
+// firstSolution // 
+
+function correct(string) {
+ return string.replace(/5/g, "S").replace(/0/g, "O").replace(/1/g, "I");
+}
+
+// secondSolution //
+
+const correct = string => string.replace(/5/g, "S").replace(/0/g, "O").replace(/1/g, "I");
+
+  // Sample tests //
+
+  Test.assertEquals(correct("L0ND0N"),"LONDON");
+  Test.assertEquals(correct("DUBL1N"),"DUBLIN");
+  Test.assertEquals(correct("51NGAP0RE"),"SINGAPORE");
+  Test.assertEquals(correct("BUDAPE5T"),"BUDAPEST");
+  Test.assertEquals(correct("PAR15"),"PARIS");
+  
+// EXAMPLE_12 //
+// L1: Set Alarm //
+// firstSolution //
+
+function setAlarm(employed, vacation){
+   return (employed !== false && vacation !== true) 
+}
+
+// secondSolution //
+
+function setAlarm(employed, vacation){
+  return employed && !vacation;
+}
+
+  // Sample tests //
+
+  Test.expect(!setAlarm(true, true), "Should be false.");
+  Test.expect(!setAlarm(false, true), "Should be false.");
+  Test.expect(setAlarm(true, false), "Should be true.");
+
+// EXAMPLE_13 //
+// MakeUpperCase //
+// firstSolution //
+
+function makeUpperCase(str) {
+  return str.toUpperCase();
+}
+
+// secondSolution //
+
+const makeUpperCase = str => str.toUpperCase();
+
+  // Sample tests //
+
+  describe("Basic Tests", function(){
+    it("should pass the basic tests", function(){
+      Test.assertEquals(makeUpperCase("hello"), "HELLO");
+    });
+  });
+
+// EXAMPLE_14 //
+// Hex to Decimal //
+// firstSolution //
+
+function hexToDec(hexString){
+  return parseInt(hexString, 16);
+}
+
+// secondSolution //
+
+const hexToDec = hexString => parseInt(hexString, 16);r
+
+  // Sample tests //
+
+  Test.describe("Example Tests",_=>{
+  Test.assertEquals(hexToDec("1"), 1);
+  Test.assertEquals(hexToDec("a"), 10);
+  Test.assertEquals(hexToDec("10"), 16);
+  Test.assertEquals(hexToDec("FF"), 255);
+  Test.assertEquals(hexToDec("-C"), -12);
+  })
