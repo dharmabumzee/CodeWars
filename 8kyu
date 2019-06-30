@@ -203,3 +203,29 @@ const getSize = (w, h, d) => [2*(w * h + w * d + h*d), w*h*d];
   Test.assertSimilar(getSize(10, 10, 10), [600, 1000]);
   Test.assertEquals(getSize(4, 2, 6)[0], 88);
   Test.assertEquals(getSize(4, 2, 6)[1], 48);
+  
+// EXAMPLE_9 //
+// Remove first and last character //
+// firstSolution //
+
+function removeChar(str){
+ return str.slice(1, str.length - 1);
+};
+
+// secondSolution //
+
+function removeChar(str){
+ return str.slice(1, -1);
+};
+
+
+  // Sample tests //
+
+  Test.describe("Tests", function(){
+
+  Test.assertEquals(removeChar('eloquent'), 'loquen');
+  Test.assertEquals(removeChar('country'), 'ountr');
+  Test.assertEquals(removeChar('person'), 'erso');
+  Test.assertEquals(removeChar('place'), 'lac');
+
+  });
