@@ -53,3 +53,28 @@ function friend(friends){
     Test.assertSimilar(friend(["Ryan", "Jimmy", "123", "4", "Cool Man"]), ["Ryan"]);
     Test.assertSimilar(friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"]), ["Jimm", "Cari", "aret"]);
     Test.assertSimilar(friend(["Love", "Your", "Face", "1"]), ["Love", "Your", "Face"]);
+
+// Example_3 //
+// Reverse words //
+// firstSolution // 
+
+function reverseWords(str) {
+ return str.split("").reverse().join("").split(/\s/g).reverse().join(" ");
+}
+
+// secondSolution //
+
+function reverseWords(str) {
+  return str.split(" ").map(str => str.split("").reverse().join("")).join(" ");
+}
+
+    // Sample tests //
+
+    Test.describe('Sample Tests', _ => {
+      Test.it('Should pass Sample tests', _ => {
+        Test.assertEquals(reverseWords('The quick brown fox jumps over the lazy dog.'), 'ehT kciuq nworb xof spmuj revo eht yzal .god');
+        Test.assertEquals(reverseWords('apple'), 'elppa');
+        Test.assertEquals(reverseWords('a b c d'), 'a b c d');
+        Test.assertEquals(reverseWords('double  spaced  words'), 'elbuod  decaps  sdrow');
+      });
+    });
