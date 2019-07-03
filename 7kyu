@@ -22,3 +22,34 @@ Test.describe("PublicTest", function() {
     Test.assertEquals(isTriangle(1,2,2), true);
     Test.assertEquals(isTriangle(7,2,2), false);
 });
+
+// Example_2 //
+// Friend or Foe?
+// Make a program that filters a list of strings and returns a list with only your friends name in it. //
+// If a name has exactly 4 letters in it, you can be sure that it has to be a friend of yours! //
+
+// firstSolution //
+
+function friend(friends){
+  var realFriends = [];
+  for (var i = 0; i < friends.length; i++ ) {
+    if (friends[i].length == 4) {
+      realFriends.push(friends[i]);
+    } 
+  }
+  return realFriends;
+}
+
+// secondSolution //
+
+function friend(friends){
+  return friends.filter(n => n.length === 4);
+}
+
+
+    // Sample tests
+
+    Test.assertSimilar(friend(["Ryan", "Kieran", "Mark"]), ["Ryan", "Mark"]);
+    Test.assertSimilar(friend(["Ryan", "Jimmy", "123", "4", "Cool Man"]), ["Ryan"]);
+    Test.assertSimilar(friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"]), ["Jimm", "Cari", "aret"]);
+    Test.assertSimilar(friend(["Love", "Your", "Face", "1"]), ["Love", "Your", "Face"]);
