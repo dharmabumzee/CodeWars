@@ -364,3 +364,30 @@ function grow(x){
   Test.assertEquals(grow([4, 1, 1, 1, 4]), 16); 
   Test.assertEquals(grow([2, 2, 2, 2, 2, 2]), 64); 
   });
+
+// EXAMPLE_16 //
+//
+// firstSolution //
+
+function betterThanAverage(classPoints, yourPoints) {
+  var average = (classPoints.reduce((a,b) => (a + b),0) + yourPoints) / (classPoints.length + 1);
+  return result = (average < yourPoints) ? true : false;
+}
+
+// secondSolution //
+
+  // Sample tests //
+
+  Test.describe("Example Tests", function() {
+    Test.it("betterThanAverage([2, 3], 5) should return True", function() {
+      Test.assertEquals(betterThanAverage([2, 3], 5), true);
+    });
+
+    Test.it("betterThanAverage([100, 40, 34, 57, 29, 72, 57, 88], 75) should return True", function() {
+      Test.assertEquals(betterThanAverage([100, 40, 34, 57, 29, 72, 57, 88], 75), true);
+    });
+
+    Test.it("betterThanAverage([12, 23, 34, 45, 56, 67, 78, 89, 90], 9) should return False", function() {
+      Test.assertEquals(betterThanAverage([12, 23, 34, 45, 56, 67, 78, 89, 90], 9), false);
+    });
+  });
