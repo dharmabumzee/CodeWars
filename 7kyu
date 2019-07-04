@@ -23,6 +23,7 @@ Test.describe("PublicTest", function() {
     Test.assertEquals(isTriangle(7,2,2), false);
 });
 
+
 // Example_2 //
 // Friend or Foe?
 // Make a program that filters a list of strings and returns a list with only your friends name in it. //
@@ -54,6 +55,7 @@ function friend(friends){
     Test.assertSimilar(friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"]), ["Jimm", "Cari", "aret"]);
     Test.assertSimilar(friend(["Love", "Your", "Face", "1"]), ["Love", "Your", "Face"]);
 
+
 // Example_3 //
 // Reverse words //
 // firstSolution // 
@@ -78,3 +80,49 @@ function reverseWords(str) {
         Test.assertEquals(reverseWords('double  spaced  words'), 'elbuod  decaps  sdrow');
       });
     });
+
+
+// Example_4 //
+// Descending order //
+
+function descendingOrder(n){
+  return parseInt(Array.from(String(n), Number).sort((a,b) => b - a).join(""));
+}
+
+    // Sample tests //
+
+    Test.assertEquals(descendingOrder(0), 0)
+    Test.assertEquals(descendingOrder(1), 1)
+    Test.assertEquals(descendingOrder(123456789), 987654321)
+    
+// Example_5 //
+// The Club Doorman will give you a word. 
+// To enter the Club you need to provide the right number according to provided the word.
+// Every given word has a doubled letter, like 'tt' in lettuce.
+// You need to find the doubled letter's position of the given word in the alphabet and multiply this number per 3.
+
+// firstSolution
+ 
+ function passTheDoorMan (word){
+  var doubleLetter;
+  for (var i = 0; i < word.length-1; i++) 
+    if (word[i] == word[i+1]) {
+      doubleLetter = word[i];
+      break;
+    }
+  return (doubleLetter.charCodeAt()-96)*3;
+}
+
+// secondSolution //
+
+const passTheDoorMan = word => ((word.match(/(.)\1/)[1]).charCodeAt(0) - 96) * 3;
+
+    // Sample tests //
+
+     describe("Club Doorman", function(){
+       it("Basic Tests", function(){
+        Test.assertSimilar( passTheDoorMan("lettuce") , 60);
+        Test.assertSimilar( passTheDoorMan("hill"), 36);
+        Test.assertSimilar( passTheDoorMan("apple"), 48);
+      });
+     });  
