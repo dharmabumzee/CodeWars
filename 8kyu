@@ -399,3 +399,19 @@ function betterThanAverage(classPoints, yourPoints) {
       Test.assertEquals(betterThanAverage([12, 23, 34, 45, 56, 67, 78, 89, 90], 9), false);
     });
   });
+
+// EXAMPLE_17 //
+// Given a non-negative integer n, write a function toBinary/ToBinary which returns that number in a binary format. //
+
+const toBinary = n => parseInt(n.toString(2));
+
+  // Sample tests //
+
+  Test.describe("Tests", function(){
+
+  Test.assertEquals(toBinary(1), 1);
+  Test.assertEquals(toBinary(2), 10);
+  Test.assertEquals(toBinary(3), 11);
+  Test.assertEquals(toBinary(5), 101);
+
+  });
