@@ -1,4 +1,3 @@
-.
 // Example_1 //
 // Is this a triangle? //
 // firstSolution //
@@ -127,3 +126,45 @@ const passTheDoorMan = word => ((word.match(/(.)\1/)[1]).charCodeAt(0) - 96) * 3
         Test.assertSimilar( passTheDoorMan("apple"), 48);
       });
      });  
+
+// Example_6 //
+// Simple Fun #152: Invite More Women? //
+// firstSolution //
+
+function inviteMoreWomen(L) {
+  var men = 0;
+  var women = 0;
+  for (var i = 0; i < L.length; i++) {
+    if ( L[i] > 0 ) {
+      men += 1;
+    } else {
+      women += 1;
+    }
+  }
+  
+  if (men > women) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// secondSolution
+
+const inviteMoreWomen = L => L.reduce((a,b) => a+b) > 0;
+
+
+    // Sample tests //
+
+    describe("Basic Tests", function(){
+    it("It should works for basic tests.", function(){
+
+    Test.assertEquals(inviteMoreWomen([1, -1, 1]),true)
+
+    Test.assertEquals(inviteMoreWomen([1, 1, 1]),true)
+
+    Test.assertEquals(inviteMoreWomen([-1, -1, -1]),false)
+
+    Test.assertEquals(inviteMoreWomen([1, -1]),false)
+
+    })})
