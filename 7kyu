@@ -168,3 +168,13 @@ const inviteMoreWomen = L => L.reduce((a,b) => a+b) > 0;
     Test.assertEquals(inviteMoreWomen([1, -1]),false)
 
     })})
+
+// Example_7 //
+// Your task is to write a function that takes a string and return a new string with all vowels removed //
+
+const disemvowel = str => str.replace(/[aeiou]/gi, '');
+
+    // Sample tests //
+
+    Test.assertEquals(disemvowel("This website is for losers LOL!"),
+      "Ths wbst s fr lsrs LL!")
