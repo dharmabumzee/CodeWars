@@ -178,3 +178,19 @@ const disemvowel = str => str.replace(/[aeiou]/gi, '');
 
     Test.assertEquals(disemvowel("This website is for losers LOL!"),
       "Ths wbst s fr lsrs LL!")
+  
+  // Example_8 //
+  // return the first m multiples of n //
+  // firstSolution //
+  
+ function multiples(m, n){
+    let result = [];
+    for (let i = 1; i <= m; i++) {
+        result.push(i*n);
+ }
+    return result;
+}
+
+    // Sample tests //
+
+    Test.assertDeepEquals(multiples(3, 5), [5, 10, 15])
