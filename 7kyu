@@ -191,6 +191,12 @@ const disemvowel = str => str.replace(/[aeiou]/gi, '');
     return result;
 }
 
+// secondSolution
+
+const multiples = (m, n) => Array.from(Array(m), (_, i) => n* i + n);
+
+
+
     // Sample tests //
 
     Test.assertDeepEquals(multiples(3, 5), [5, 10, 15])
