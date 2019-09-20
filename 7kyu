@@ -200,3 +200,38 @@ const multiples = (m, n) => Array.from(Array(m), (_, i) => n* i + n);
     // Sample tests //
 
     Test.assertDeepEquals(multiples(3, 5), [5, 10, 15])
+
+// Example _8 
+// Complementary DNA
+
+// firstSolution
+
+function DNAStrand(dna){
+  let complementDNA = '';
+  for(let i = 0; i < dna.length; i++){
+    if(dna[i] === 'T'){
+      complementDNA += 'A';
+    }
+    if(dna[i] === 'A'){
+      complementDNA += 'T';
+    }
+    if(dna[i] === 'C'){
+      complementDNA += 'G';
+    }
+    if(dna[i] === 'G'){
+      complementDNA += 'C';
+    }
+  }
+  return complementDNA;
+}
+
+
+// secondSolution
+
+const DNAStrand = dna => dna.replace(/./g, x => "ATCG"["TAGC".indexOf(x)]);
+
+    // Sample tests
+
+    Test.assertEquals(DNAStrand("AAAA"),"TTTT","String AAAA is");
+    Test.assertEquals(DNAStrand("ATTGC"),"TAACG","String ATTGC is");
+    Test.assertEquals(DNAStrand("GTAT"),"CATA","String GTAT is");
