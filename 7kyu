@@ -366,3 +366,21 @@ const addBinary= (a,b) => (a + b).toString(2);
         Test.assertEquals(results1, "11");
       });
     });
+
+// Example_14
+// Spacify
+// Modify the spacify function so that it returns the given string with spaces insertedbetween each character.
+// spacify("hello world") // returns "h e l l o   w o r l d"
+
+const spacify = str => str.split("").join(" ");
+
+    // Sample tests
+
+    const {assert} = require("chai");
+
+    describe("spacify", function() {
+      it("basic tests", function() {
+        assert.equal(spacify('hello world'),'h e l l o   w o r l d');
+        assert.equal(spacify('12345'),'1 2 3 4 5');
+      });
+    });
