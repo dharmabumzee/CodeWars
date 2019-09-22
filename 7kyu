@@ -497,11 +497,17 @@ function pendulum(values) {
 // Only by Thinking and Testing
 // Look at the results of the testcases, and guess the code!
 
+// firstSolution
+
 function testit(arr){
   let a = arr[0] * arr[3];
   let b = arr[1] * arr[2];
   return a + b;
 }
+
+// secondSolution
+
+const  testit = ([a, b, c, d]) => b * c + a * d;
 
     // Sample tests
 
