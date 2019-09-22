@@ -491,3 +491,30 @@ function pendulum(values) {
         })
     })
 
+// Example_16 
+// No Story
+// No Description
+// Only by Thinking and Testing
+// Look at the results of the testcases, and guess the code!
+
+function testit(arr){
+  let a = arr[0] * arr[3];
+  let b = arr[1] * arr[2];
+  return a + b;
+}
+
+    // Sample tests
+
+    //Add? subtract? multiply? divide? Who and who?
+    Test.assertSimilar(testit([0,0,0,0]), 0, "")
+    Test.assertSimilar(testit([0,0,0,1]), 0, "")
+    Test.assertSimilar(testit([0,0,1,1]), 0, "")
+    Test.assertSimilar(testit([0,1,0,1]), 0, "")
+    Test.assertSimilar(testit([0,1,1,0]), 1, "")
+    Test.assertSimilar(testit([1,0,0,1]), 1, "")
+    Test.assertSimilar(testit([9,2,7,0]), 14, "")
+    Test.assertSimilar(testit([8,2,6,4)), 44, "")
+    Test.assertSimilar(testit([9,5,9,5]), 90, "")
+    Test.assertSimilar(testit([4,4,1,9]), 40, "")
+
+
