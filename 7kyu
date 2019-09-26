@@ -560,3 +560,84 @@ const passHash = str => require('crypto').createHash('md5').update(str).digest('
       Test.assertEquals(passHash(tests[i][0]), tests[i][1])
     }
 
+
+// Example_19
+// Ten Green Bottles
+// Lyrics:
+// 
+// Ten green bottles hanging on the wall,
+// Ten green bottles hanging on the wall,
+// And if one green bottle should accidentally fall,
+// There'll be nine green bottles hanging on the wall.
+// 
+// Nine green bottles hanging on the wall,
+// Nine green bottles hanging on the wall,
+// And if one green bottle should accidentally fall,
+// There'll be eight green bottles hanging on the wall. 
+// 
+// Eight green bottles hanging on the wall...
+// Seven green bottles hanging on the wall...
+// ...
+// 
+// One green bottle hanging on the wall,
+// One green bottle hanging on the wall,
+// If that one green bottle should accidentally fall,
+// There'll be no green bottles hanging on the wall.
+// Task
+// Write some amazing code to reproduce the above lyrics starting from n green bottles!
+// 
+// parameter n is 1 to 10
+// newline terminates every line (including the last)
+// don't forget the blank lines between the verses
+
+
+function tenGreenBottles(n) {
+    
+    let result = [];
+    const convert = {
+      10 : "ten",
+       9 : "nine",
+       8 : "eight",
+       7 : "seven",
+       6 : "six",
+       5 : "five",
+       4 : "four",
+       3 : "three",
+       2 : "two",
+       1 : "one",
+       0 : "no"
+    }
+    
+    const line1 = () => `${convert[n].replace(/^[a-z]/, x => x.toUpperCase())} green bottle${n !== 1 ? 's' : ''} hanging on the wall,`,
+          line3 = () => `${n > 1 ? 'And if' : 'If that'} one green bottle should accidentally fall,`,
+          line4 = () => `There'll be ${convert[n - 1]} green bottle${n - 1 !== 1 ? 's' : ''} hanging on the wall.`;
+        
+                
+    while ( n > 0 ) {
+      result.push(line1(), line1(), line3(), line4(), '');
+      n--;
+    }
+    return result.join('\n');
+}  
+
+
+    // Sample tests
+
+    describe("ExampleTests", function() {
+
+      it("ex", function() {
+        var expected = 
+        "Two green bottles hanging on the wall,\n"+
+        "Two green bottles hanging on the wall,\n"+
+        "And if one green bottle should accidentally fall,\n"+
+        "There'll be one green bottle hanging on the wall.\n"+
+        "\n"+
+        "One green bottle hanging on the wall,\n"+
+        "One green bottle hanging on the wall,\n"+
+        "If that one green bottle should accidentally fall,\n"+
+        "There'll be no green bottles hanging on the wall.\n";
+        // actual, expected
+        Test.assertEquals(tenGreenBottles(2), expected);
+      });
+
+    });
