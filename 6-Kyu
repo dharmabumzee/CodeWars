@@ -30,16 +30,8 @@ Please ask before translating: some translations are already written and publish
 
 ```javascript
 function partsSums(ls) {
-  let result = [];
-  
-  while (ls.length > 0) {
-         result.push(ls.reduce((a,b) => a + b, 0));
-         ls.shift();
-  }
-  
-  result.push(0);
-
- 
- return result;
+    let sum = ls.reduce((a,b) => a + b, 0);
+    if (!ls.length) return [0];
+    return [sum, ...ls.map(x => sum -= x)];
 }
 ```
