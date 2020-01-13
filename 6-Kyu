@@ -147,3 +147,7 @@ function findOdd(A) {
   return A.reduce(function(x,y){return x^y;},0);
 }
 ```
+
+```javascript
+ const findOdd = A => A.reduce((a, b) => a ^ b);
+```
