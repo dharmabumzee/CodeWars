@@ -14,5 +14,8 @@ function validate(password) {
   let regex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])[A-Za-z0-9]{6,}$/;
   return regex.test(password);
 }
-}
+```
+
+```javascript
+const validate = password => /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])[A-Za-z0-9]{6,}$/.test(password);
 ```
