@@ -243,6 +243,7 @@ const prefill = (n, v) => (n === 0 || n === '0') ? [] :
 ```
 
 ## Highest Rank Number in an Array
+https://www.codewars.com/kata/highest-rank-number-in-an-array
 
 Complete the method which returns the number which is most frequent in the given input array. If there is a tie for most frequent number, return the largest number among them.
 
