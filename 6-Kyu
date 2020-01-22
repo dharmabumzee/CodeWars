@@ -259,6 +259,7 @@ const highestRank = arr => arr.sort( (x, y) => arr.filter(i => i === y).length -
 ```
 
 ## IPv4 to int32
+https://www.codewars.com/kata/ipv4-to-int32/
 
 Take the following IPv4 address: 128.32.10.1 This address has 4 octets where each octet is a single byte (or 8 bits).
 
@@ -277,3 +278,15 @@ Write a function ip_to_int32(ip) ( JS: ipToInt32(ip) ) that takes an IPv4 addres
   ```javascript
   const ipToInt32 = ip => ip.split('.').reduce( ( int, v ) => 256 * int + Number(v), 0);
   ```
+  
+  ## Reverse every other word in the string
+  https://www.codewars.com/kata/reverse-every-other-word-in-the-string
+  
+  Reverse every other word in a given string, then return the string. 
+  Throw away any leading or trailing whitespace, while ensuring there is exactly one space between each word. 
+  Punctuation marks should be treated as if they are apart of the word in this kata.
+  
+  ```javascript
+  const reverse = str => str.trim().split(' ').map( (word, index) =>  index % 2 == 0 ? word : word.split('').reverse().join('')).join(' ');
+  ```
+  
