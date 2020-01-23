@@ -318,3 +318,14 @@ const titleCase = (title, minorWords) => {
 
 let capitalize = str => str[0].toUpperCase() + str.slice(1);
 ```
+
+```javascript
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
+}
+
+function titleCase(title, minorWords) {
+   let titleArr = title.toLowerCase().split(' '), minorWordsArr = minorWords ? minorWords.toLowerCase().split(' ') : [];
+   return titleArr.map( (a, b) => minorWordsArr.indexOf(a) === -1 || b === 0 ? a.capitalize() : a ).join(' ');
+}
+```
