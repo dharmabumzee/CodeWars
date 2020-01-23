@@ -290,3 +290,31 @@ Punctuation marks should be treated as if they are apart of the word in this kat
 const reverse = str => str.trim().split(' ').map( (word, index) =>  index % 2 == 0 ? word : word.split('').reverse().join('')).join(' ');
 ```
   
+## Title Case
+
+``javascript
+const titleCase = (title, minorWords) => {
+  
+  if (title.length === 0) {
+    return '';
+  }
+  
+  let minorArr;
+  
+  minorWords ? minorArr = minorWords.toLowerCase().split(' ') : minorArr = [];
+  
+  let titleArr = title.toLowerCase().split(' ');
+  
+  titleArr[0] = capitalize(titleArr[0]);
+  
+  for (let i = 0; i < titleArr.length; i++) {
+    if (minorArr.indexOf(titleArr[i]) === -1) {
+      titleArr[i] = capitalize(titleArr[i]);
+    }
+  }
+  
+  return titleArr.join(' ');
+}
+
+let capitalize = str => str[0].toUpperCase() + str.slice(1);
+```
