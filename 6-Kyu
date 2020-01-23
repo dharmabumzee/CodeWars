@@ -371,5 +371,5 @@ Note: your code should be optimized to handle big inputs.
 
 
 ```javascript
-const oddRow = n => Array(n).fill(0).map( (_, i) => Math.pow(n, 2) - n + 1 + i * 2 );
+const oddRow = n => Array(n).fill(0).map( (e, i) => Math.pow(n, 2) - n + 1 + i * 2 );
 ```
