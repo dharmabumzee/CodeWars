@@ -469,6 +469,8 @@ count(null, 1) => 0
 count(1 -> 2 -> 3 -> null, 1) => 1
 count(1 -> 1 -> 1 -> 2 -> 2 -> 2 -> 2 -> 3 -> 3 -> null, 2) => 4
 
+Inspired by Stanford Professor Nick Parlante's excellent - http://cslibrary.stanford.edu/103/LinkedListBasics.pdf
+
 ```javascript
 function Node(data) {
   this.data = data
