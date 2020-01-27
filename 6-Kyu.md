@@ -1,3 +1,4 @@
+# Total completed: 20
 ## Sums of Parts
 https://www.codewars.com/kata/sums-of-parts/
 
