@@ -459,7 +459,7 @@ so create a function that will return true if the walk the app gives you will ta
 Note: you will always receive a valid array containing a random assortment of direction letters 
 ('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's standing still!).
 
-```javscript
+```javascript
 const count = (walk, dir) => walk.filter(direction => direction === dir).length
 
 const isValidWalk = walk =>
