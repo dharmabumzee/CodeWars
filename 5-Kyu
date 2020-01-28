@@ -32,3 +32,5 @@ Only letters from the latin/english alphabet should be shifted, like in the orig
 ```javascript
 const rot13 = str => (str + '').replace(/[a-zA-Z]/gi, s => String.fromCharCode(s.charCodeAt(0) + (s.toLowerCase() < 'n' ? 13 : -13)))
 ```
+
+....
