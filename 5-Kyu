@@ -96,3 +96,33 @@ Hint: You're not meant to calculate the factorial. Find another way to find the 
 ```javascript
 const zeros = n => n / 5 < 1 ? 0 : Math.floor(n / 5) + zeros(n / 5);
 ```
+
+## A Chain adding function
+https://www.codewars.com/kata/a-chain-adding-function
+
+We want to create a function that will add numbers together when called in succession.
+
+add(1)(2);
+// returns 3
+We also want to be able to continue to add numbers to our chain.
+
+add(1)(2)(3); // 6
+add(1)(2)(3)(4); // 10
+add(1)(2)(3)(4)(5); // 15
+and so on.
+
+A single call should return the number passed in.
+
+add(1); // 1
+We should be able to store the returned values and reuse them.
+
+var addTwo = add(2);
+addTwo; // 2
+addTwo + 5; // 7
+addTwo(3); // 5
+addTwo(3)(5); // 10
+We can assume any number being passed in will be valid whole number.
+
+```javscript
+const add = n => Object.assign(i => add(i + n), { valueOf: () => n })
+```
